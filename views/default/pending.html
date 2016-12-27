@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>
+TEXT HERE
+</h1>
+{{for item in items:}}
+{{for orderform in orderforms:}}
+{{if item.id==orderform.item_id:}}
+{{if orderform.shipped==False:}}
+{{=orderform.address}} <br><br>
+{{pass}}
+{{pass}}
+{{pass}}
+{{pass}}

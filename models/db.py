@@ -16,7 +16,8 @@ db.define_table('orderform',
                 Field('address'),
                 Field('city'),
                 Field('state'),
-                Field('zip'))
+                Field('zip'),
+                Field('shipped', 'boolean'))
 
 db.define_table('post',
                 Field('item_id', 'reference item'),
@@ -30,3 +31,5 @@ db.post.author.requires = IS_NOT_EMPTY()
 db.post.body.requires = IS_NOT_EMPTY()
 
 db.post.item_id.writable = db.post.item_id.readable = False
+db.orderform.item_id.writable = db.orderform.item_id.readable = False
+db.orderform.shipped.writable = db.orderform.shipped.readable = False
