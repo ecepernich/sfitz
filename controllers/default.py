@@ -20,7 +20,8 @@ def index():
     """
     response.flash = T("Hello World")
     """
-    return dict(message=T('Welcome to web2py!'))
+    items = db().select(db.item.ALL)
+    return locals()
 
 
 def user():
@@ -62,4 +63,5 @@ def call():
 
 def listing():
     items = db().select(db.item.ALL)
-    return dict(items=items)
+    post = db.item(request.args(0, cast=int))
+    return locals()
