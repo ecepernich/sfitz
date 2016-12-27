@@ -62,6 +62,9 @@ def call():
     return service()
 
 def listing():
-    items = db().select(db.item.ALL)
     post = db.item(request.args(0, cast=int))
+    return locals()
+
+def order():
+    post=db.item(request.args(0, cast=int))
     return locals()
