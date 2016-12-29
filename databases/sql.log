@@ -53,3 +53,2068 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2016-12-25T21:47:09.136419
+CREATE TABLE image(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) UNIQUE,
+    file CHAR(512)
+);
+success!
+timestamp: 2016-12-25T21:47:09.179161
+CREATE TABLE post(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_id INTEGER REFERENCES image (id) ON DELETE CASCADE  ,
+    author CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-25T21:51:20.870245
+ALTER TABLE image ADD body TEXT;
+success!
+timestamp: 2016-12-25T21:51:37.135732
+ALTER TABLE image ADD title1 CHAR(512);
+timestamp: 2016-12-25T21:51:37.137448
+ALTER TABLE image ADD title2 CHAR(512);
+timestamp: 2016-12-25T21:51:37.138769
+ALTER TABLE image ADD title3 CHAR(512);
+success!
+timestamp: 2016-12-25T21:53:45.364236
+ALTER TABLE image ADD quantity DOUBLE;
+success!
+timestamp: 2016-12-25T21:54:01.360710
+ALTER TABLE image ADD price DOUBLE;
+success!
+timestamp: 2016-12-25T21:54:19.265050
+ALTER TABLE image ADD material CHAR(512);
+success!
+success!
+timestamp: 2016-12-25T21:54:35.806077
+ALTER TABLE image ADD description TEXT;
+success!
+timestamp: 2016-12-25T21:55:15.179114
+ALTER TABLE image ADD available CHAR(1);
+success!
+success!
+timestamp: 2016-12-25T21:55:28.611650
+ALTER TABLE image ADD sold CHAR(1);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-25T22:03:20.871944
+ALTER TABLE image ADD shipping CHAR(512);
+success!
+success!
+success!
+timestamp: 2016-12-25T22:05:18.764087
+ALTER TABLE image ADD care TEXT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T14:44:55.730256
+CREATE TABLE sale(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_id INTEGER REFERENCES image (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T14:46:23.181394
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    Material CHAR(512),
+    price DOUBLE,
+    file CHAR(512),
+    sold CHAR(1),
+    shipping CHAR(512),
+    description TEXT,
+    care TEXT
+);
+success!
+timestamp: 2016-12-26T14:46:23.276259
+ALTER TABLE post ADD item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ;
+success!
+timestamp: 2016-12-26T14:46:23.490733
+ALTER TABLE sale ADD item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T19:32:37.175887
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:32:43.720546
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:33:14.066989
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:33:36.742106
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:34:04.175744
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:34:36.675546
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:35:03.995592
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:35:10.939153
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:35:36.676341
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:35:45.176494
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:36:04.693360
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:36:11.838425
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:36:34.753516
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:37:04.701855
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:37:17.401531
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:37:34.909059
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:38:04.296171
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512),
+    body TEXT
+);
+success!
+timestamp: 2016-12-26T19:38:22.479431
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:38:35.963080
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:39:04.732567
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:39:31.321815
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:39:34.953622
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:39:42.545776
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:40:06.015702
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+timestamp: 2016-12-26T19:40:22.031411
+ALTER TABLE post ADD nix CHAR(512);
+success!
+timestamp: 2016-12-26T19:40:22.114207
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:40:35.317343
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:41:04.783885
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:41:17.284762
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:41:34.649262
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:41:40.206012
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:41:47.380703
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:42:07.579263
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:42:30.184619
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:42:34.903088
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:43:06.070741
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:43:37.695518
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:44:04.789495
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:44:34.818571
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:45:04.695265
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:45:34.673499
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:46:05.118418
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:46:22.269390
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:46:34.748808
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:47:05.394205
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:47:34.656665
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:48:03.982447
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:48:12.556851
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:48:34.600564
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    one CHAR(512),
+    two CHAR(512),
+    three CHAR(512),
+    four TEXT
+);
+success!
+timestamp: 2016-12-26T19:48:48.476644
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    itemid CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:49:04.786724
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    itemid CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+timestamp: 2016-12-26T19:49:17.002813
+CREATE TABLE order(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    itemid CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zip CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T19:53:30.726427
+CREATE TABLE orderform(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    itemid CHAR(512),
+    name CHAR(512),
+    address CHAR(512),
+    city CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T19:54:01.373807
+ALTER TABLE orderform ADD zip CHAR(512);
+timestamp: 2016-12-26T19:54:01.453391
+ALTER TABLE orderform ADD state CHAR(512);
+timestamp: 2016-12-26T19:54:01.456158
+ALTER TABLE orderform ADD item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-26T20:18:10.611511
+ALTER TABLE orderform ADD shipped CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-28T22:14:12.208998
+CREATE TABLE pastorder(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER REFERENCES item (id) ON DELETE CASCADE  ,
+    order_id INTEGER REFERENCES orderform (id) ON DELETE CASCADE  ,
+    shipped CHAR(1)
+);
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-28T22:17:12.059619
+ALTER TABLE orderform ADD address_line_2 CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

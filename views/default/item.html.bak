@@ -1,0 +1,3 @@
+{{extend 'layout.html'}}
+<a href="{{=URL('index')}}">Back</a>
+{{=BEAUTIFY(response._vars)}}
