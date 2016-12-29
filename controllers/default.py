@@ -75,7 +75,7 @@ def orderform():
     return locals()
 
 def pending():
-    orderforms=db().select(db.orderform.ALL)
+    orderforms=db(db.orderform.shipped == False).select()
     items=db().select(db.item.ALL)
     return locals()
 
