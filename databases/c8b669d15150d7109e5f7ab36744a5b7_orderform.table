@@ -94,7 +94,7 @@ I00
 sg20
 S'datetime'
 p31
-ssS'shipped'
+ssS'state'
 p32
 (dp33
 g14
@@ -102,7 +102,7 @@ I512
 sg15
 I00
 sg16
-I10
+I7
 sg17
 S'CHAR(512)'
 p34
@@ -110,7 +110,7 @@ sg19
 I00
 sg20
 g21
-ssS'state'
+ssS'shipped'
 p35
 (dp36
 g14
@@ -118,7 +118,7 @@ I512
 sg15
 I00
 sg16
-I7
+I10
 sg17
 S'CHAR(512)'
 p37

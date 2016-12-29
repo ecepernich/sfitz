@@ -178,3 +178,13 @@
 [2016-12-28 23:40:14] EDIT sfitz/models/db.py: 1
 [2016-12-28 23:44:37] EDIT sfitz/models/db.py: 0
 [2016-12-28 23:47:32] EDIT sfitz/controllers/default.py: 0
+[2016-12-28 23:56:53] EDIT sfitz/controllers/default.py: 0
+[2016-12-28 23:57:30] EDIT sfitz/models/db.py: 0
+[2016-12-28 23:58:22] EDIT sfitz/controllers/default.py: 0
+[2016-12-28 23:58:37] CREATE default/payment.html: 0
+[2016-12-28 23:58:49] EDIT sfitz/views/default/payment.html: -1
+[2016-12-28 23:59:16] EDIT sfitz/views/default/payment.html: 1
+[2016-12-29 00:01:22] EDIT sfitz/views/default/index.html: 0
+[2016-12-29 00:03:40] EDIT sfitz/models/db.py: 0
+[2016-12-29 00:04:45] EDIT sfitz/models/db.py: 0
+[2016-12-29 00:05:02] EDIT sfitz/models/db.py: 0

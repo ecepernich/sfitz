@@ -9,7 +9,7 @@ TEXT HERE
 {{if item.title:}}
 {{name=item.title}}
 {{if item.file:}}
-<img width="150px" height="250px" src="{{=URL('download', args=item.file)}}"/>
+<img width="150px" height="150px" src="{{=URL('download', args=item.file)}}"/>
 {{pass}}
 <a href="{{=URL('listing',args=item.id)}}">Title: {{=name}}</a>
 <br><br>
