@@ -35,7 +35,7 @@ def orderform():
     db.orderform.shipped.default=False
     form = SQLFORM(db.orderform).process()
     if form.accepted:
-        post.sold=True
+        post.update_record(sold=True)
         redirect(URL('index'))
     return locals()
 

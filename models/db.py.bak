@@ -1,5 +1,7 @@
 db = DAL("sqlite://storage.sqlite")
 
+categories=['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA' 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 'DC']
+
 db.define_table('item',
                 Field('title'),
                 Field('Material'),
@@ -18,7 +20,7 @@ db.define_table('orderform',
                 Field('city'),
                 Field('state'),
                 Field('zip'),
-                Field('date_ordered', 'datetime'),
+                Field('date_ordered', 'datetime', default=request.now),
                 Field('shipped'))
 
 db.define_table('pastorder',
