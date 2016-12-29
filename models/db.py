@@ -18,6 +18,7 @@ db.define_table('orderform',
                 Field('city'),
                 Field('state'),
                 Field('zip'),
+                Field('date_ordered', 'datetime', default=request.now),
                 Field('shipped'))
 
 db.define_table('pastorder',
@@ -39,4 +40,5 @@ db.orderform.zip.requires = IS_NOT_EMPTY()
 db.item.sold.writable = db.item.sold.readable = False
 db.orderform.item_id.writable = db.orderform.item_id.readable = False
 db.orderform.shipped.writable = db.orderform.shipped.readable = False
+db.orderform.date_ordered.writable = db.orderform.date_ordered.readable = False
 db.pastorder.shipped.writable = db.pastorder.shipped.readable = False

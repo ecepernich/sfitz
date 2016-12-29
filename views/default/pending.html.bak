@@ -1,14 +1,15 @@
 {{extend 'layout.html'}}
 <h1>
-TEXT HERE
+Pending Orders
 </h1>
 {{for item in items:}}
 {{for orderform in orderforms:}}
 {{if item.id==orderform.item_id:}}
-{{=orderform.address}} <br><br>
 {{if item.file:}}
 <img width="75px" height="75px" src="{{=URL('download', args=item.file)}}"/>
 {{pass}}
+{{=orderform.name}}, ordered on {{=orderform.ordered_on}}
+<br><br>
 {{pass}}
 {{pass}}
 {{pass}}
